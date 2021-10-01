@@ -1,3 +1,4 @@
+const { string } = require('joi');
 const mongoose = require('mongoose');
 
 const PostSchema = new mongoose.Schema(
@@ -7,6 +8,22 @@ const PostSchema = new mongoose.Schema(
             required: true,
             unique:true
         },
+        username: {
+            type: String,
+            required: true,
+        },
+        desc: {
+            type:String,
+            required: true
+        },
+        photo: {
+            type:String,
+            required: false
+        },
+        categories: {
+            type: Array,
+            required: false
+        }
     },
     {timestamps:true}
 );
